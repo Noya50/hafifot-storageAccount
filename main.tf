@@ -11,7 +11,7 @@ resource "azurerm_storage_account" "this" {
 }
 
 module "work_storageAccount_privateEndpoint" {
-  source = "../privateEndpoint"
+  source = "github.com/Noya50/hafifot-privateEndpoint.git"
 
   location                       = var.location
   resource_group                 = var.resource_group
@@ -25,7 +25,7 @@ module "work_storageAccount_privateEndpoint" {
 }
 
 module "diagnostic_setting" {
-  source = "../diagnosticSetting"
+  source = "github.com/Noya50/hafifot-diagnosticSetting.git"
 
   name                       = "${azurerm_storage_account.this.name}-diagnostic-setting-tf"
   target_resource_id         = azurerm_storage_account.this.id
@@ -33,7 +33,7 @@ module "diagnostic_setting" {
 }
 
 module "blob_diagnostic_setting" {
-  source = "../diagnosticSetting"
+  source = "github.com/Noya50/hafifot-diagnosticSetting.git"
 
   name                       = "${azurerm_storage_account.this.name}-blob-diagnostic-setting-tf"
   target_resource_id         = "${azurerm_storage_account.this.id}/blobServices/default/"
@@ -42,7 +42,7 @@ module "blob_diagnostic_setting" {
 }
 
 module "file_diagnostic_setting" {
-  source = "../diagnosticSetting"
+  source = "github.com/Noya50/hafifot-diagnosticSetting.git"
 
   name                       = "${azurerm_storage_account.this.name}-file-diagnostic-setting-tf"
   target_resource_id         = "${azurerm_storage_account.this.id}/fileServices/default/"
@@ -51,7 +51,7 @@ module "file_diagnostic_setting" {
 }
 
 module "queue_diagnostic_setting" {
-  source = "../diagnosticSetting"
+  source = "github.com/Noya50/hafifot-diagnosticSetting.git"
 
   name                       = "${azurerm_storage_account.this.name}-queue-diagnostic-setting-tf"
   target_resource_id         = "${azurerm_storage_account.this.id}/queueServices/default/"
@@ -60,7 +60,7 @@ module "queue_diagnostic_setting" {
 }
 
 module "table_diagnostic_setting" {
-  source = "../diagnosticSetting"
+  source = "github.com/Noya50/hafifot-diagnosticSetting.git"
 
   name                       = "${azurerm_storage_account.this.name}-table-diagnostic-setting-tf"
   target_resource_id         = "${azurerm_storage_account.this.id}/tableServices/default/"
