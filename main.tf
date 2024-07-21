@@ -11,7 +11,7 @@ resource "azurerm_storage_account" "this" {
 }
 
 module "work_storageAccount_privateEndpoint" {
-  source = "github.com/Noya50/hafifot-privateEndpoint.git"
+  source = "git::https://github.com/Noya50/hafifot-privateEndpoint.git"
 
   location                       = var.location
   resource_group                 = var.resource_group
