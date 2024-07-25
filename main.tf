@@ -5,11 +5,6 @@ resource "azurerm_storage_account" "this" {
   account_tier             = var.account_tier
   account_replication_type = var.account_replication_type
 
-network_rules {
-    default_action             = "Deny"
-    ip_rules                   = ["10.7.0.4"]
-  }
-
   lifecycle {
     ignore_changes = [tags]
   }
