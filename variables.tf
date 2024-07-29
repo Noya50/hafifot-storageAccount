@@ -59,9 +59,3 @@ variable "private_endpoint_subresource" {
   default     = ["table"]
   type        = set(string)
 }
-
-variable "diagnostic_setting_categories" {
-  description = "value"
-  type = list(string)
-  default = [ "StorageDelete", "StorageRead", "StorageWrite"]
-}
