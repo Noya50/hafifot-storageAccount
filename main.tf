@@ -38,7 +38,6 @@ module "blob_diagnostic_setting" {
   name                       = "${azurerm_storage_account.this.name}-blob-diagnostic-setting-tf"
   target_resource_id         = "${azurerm_storage_account.this.id}/blobServices/default/"
   log_analytics_workspace_id = var.log_analytics_workspace_id
-  diagnostic_setting_categories = var.diagnostic_setting_categories
 }
 
 module "file_diagnostic_setting" {
@@ -47,7 +46,6 @@ module "file_diagnostic_setting" {
   name                       = "${azurerm_storage_account.this.name}-file-diagnostic-setting-tf"
   target_resource_id         = "${azurerm_storage_account.this.id}/fileServices/default/"
   log_analytics_workspace_id = var.log_analytics_workspace_id
-  diagnostic_setting_categories = var.diagnostic_setting_categories
 }
 
 module "queue_diagnostic_setting" {
@@ -56,7 +54,6 @@ module "queue_diagnostic_setting" {
   name                       = "${azurerm_storage_account.this.name}-queue-diagnostic-setting-tf"
   target_resource_id         = "${azurerm_storage_account.this.id}/queueServices/default/"
   log_analytics_workspace_id = var.log_analytics_workspace_id
-  diagnostic_setting_categories = var.diagnostic_setting_categories
 }
 
 module "table_diagnostic_setting" {
@@ -65,5 +62,4 @@ module "table_diagnostic_setting" {
   name                       = "${azurerm_storage_account.this.name}-table-diagnostic-setting-tf"
   target_resource_id         = "${azurerm_storage_account.this.id}/tableServices/default/"
   log_analytics_workspace_id = var.log_analytics_workspace_id
-  diagnostic_setting_categories = var.diagnostic_setting_categories
 }
